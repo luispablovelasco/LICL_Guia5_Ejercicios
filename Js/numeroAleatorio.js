@@ -17,12 +17,23 @@ function generarNumeroAleatorio(){
     //Verificamos en que intento esta el usuario
     if (intentos <= numeroIntentos) {
         let numero = prompt("¿Que numero se ha genereado (Intento " + intentos + ")?");
-    }
+    
 
     //Verificamos el numero aleatorio con el ingrsaddo por el usuario
     if (numero == numeroAleatorio) {
         mensaje = `¡Es sorprendente, pudiste adivinar el numero oculto (${numeroAleatorio}). Refresque la página para volver a jugar.`;
     } else if (intentos == numeroIntentos) {
-        mensaje = `Su numero de intentos ha terminado. El numero oculto era`
+        mensaje = `Su numero de intentos ha terminado. El numero oculto era: ${numeroAleatorio}. Refresque la página parqa volver a jugar.`;
+    } else {
+        mensaje = `Vuelve a intentar. Quedan ${numeroIntentos - intentos} intentos`
     }
+
+    //Aumentamos el valor de intentos
+    intentos++;
+ } else {
+        mensaje = `Su numero de intentos ha terminado. El numero oculto era: ${numeroAleatorio}. Refresca la página para volver a jugar`;
 }
+    parrafo.innerHTML = mensaje;
+
+}
+
